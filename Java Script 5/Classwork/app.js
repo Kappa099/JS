@@ -162,28 +162,18 @@
 
 
 
-// let arr = [100, 80, 20,30,60]
+let arr = [100, 80, 20,30,60]
 
-// let x = 5
-// let y = 10
-
-// let temp = x  // 5
-// x = y  // 10
-// y = temp  //5
-// console.log(x)
-// console.log(y)
-
-
-// for(let el of arr){
-//     for(let i=0; i<arr.length-1;i++){
-//         if(arr[i]>arr[i+1]){
-//           let temp = arr[i]
-//           arr[i] = arr[i+1]
-//           arr[i+1] = temp
-//         }
-//       }
-// }
-// console.log(arr)
+for(let el of arr){
+    for(let i=0; i<arr.length-1;i++){
+        if(arr[i]>arr[i+1]){
+          let temp = arr[i]
+          arr[i] = arr[i+1]
+          arr[i+1] = temp
+        }
+      }
+}
+console.log(arr)
 
 
 
