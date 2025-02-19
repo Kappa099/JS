@@ -1,6 +1,6 @@
 // // დავალება N1
 // let UserNum = prompt("Hello, Please enter number from 50 to 100")
-// if (!isNaN(UserNum) && !isNaN(UserNum)){
+// if (!isNaN(UserNum)){
 //     if (UserNum>=50 && UserNum<=100){
 //         for (let i = 50; i<UserNum; i+=3)
 //             console.log(i)
@@ -41,4 +41,6 @@
 //         console.log(ContArr[i])
 //     }
 // }
+
+
 
