@@ -1,7 +1,6 @@
-// დავალება N1
-// let firstNum = (Math.round(Math.random()*100+100))
-// let secondNum = (Math.round(Math.random()*100+300))
-// let fullArr = [firstNum, secondNum]
+// // დავალება N1
+// let firstNum = (Math.round(Math.random()*100)+100)
+// let secondNum = (Math.round(Math.random()*100)+300)
 // if (firstNum %2 !==0){
 //     firstNum++
 //     for (let i=firstNum; i<secondNum; i+=2){
@@ -14,22 +13,33 @@
 //     }
 // }
 
-// // დავალება N2
-// let randNum = (Math.round(Math.random()*100+100))
+// დავალება N2
+// let randNum = (Math.round(Math.random()*100)+100)
 // let userNum = Number(prompt("Hello, Please enter a number from 300 to 400:"))
 // if (!isNaN(userNum) && userNum >= 300 && userNum <=400){
-//     for (let i=randNum; i<=userNum; i++){
-//         if (i %3 == 0){
+//     if (randNum %3 == 0){
+//         for (let i = randNum; i<userNum; i+=3){
 //             console.log(i)
 //         }
 //     }
+//     else if (randNum %3 == 1){
+//         for (let i = randNum +2; i<userNum; i+=3){
+//             console.log(i)
+//         }
+//     }
+//     else if (randNum %3 == 2){
+//         for (let i = randNum +1; i<userNum; i+=3){
+//             console.log(i)
+//         }
+//     }
+
 // }
 // else {
 //     console.log("Wrong Input")
 // }
 
 // დავალება N3
-// let randNum = (Math.round(Math.random()*11+10))
+// let randNum = (Math.round(Math.random()*11)+10)
 // let userNum = Number(prompt("Hello, Please enter a number from 10 to 20:"))
 // let find = false
 // if (!isNaN(userNum) && userNum >= 10 && userNum <=20){
@@ -45,7 +55,7 @@
 // }
 
 // დავალება N4
-// let randNum = (Math.round(Math.random()*201+100))
+// let randNum = (Math.floor(Math.random()*201)+100)
 // if (randNum %2 ==0){
 //     console.log(`Random Number is Even ${randNum}`)
 // }
