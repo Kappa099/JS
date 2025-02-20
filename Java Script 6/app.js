@@ -22,17 +22,17 @@
 //     console.log(rowSum)
 // }
 
-// let arr = [
-//     [5, 10, 15],
-//     [20, 25, 30],
-//     [35, 40, 45]
-//   ];
+let arr = [
+    [5, 10, 15],
+    [20, 25, 30],
+    [35, 40, 45]
+  ];
 
-//   for (let j = 0; j < arr[0].length; j++) {
-//     let columnSum = 0; 
-//     for (let i = 0; i < arr.length; i++) {
-//       columnSum += arr[i][j]; 
-//     }
-//     console.log(`Sum of column ${j + 1}: ${columnSum}`);
-//   }
+  for (let j = 0; j < arr[0].length; j++) {
+    let columnSum = 0; 
+    for (let i = 0; i < arr.length; i++) {
+      columnSum += arr[i][j]; 
+    }
+    console.log(`Sum of column ${j + 1}: ${columnSum}`);
+  }
   
