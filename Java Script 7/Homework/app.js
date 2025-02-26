@@ -107,3 +107,30 @@
 // let result = findNum(findLargest);
 // console.log(result); 
 
+// function findNum(numbers){
+//     let smallestArr = []
+//     for (let el of numbers){
+//         for (let i=0; i<numbers.length-1;i++){
+//             if (numbers[i]>numbers[i+1]){
+//                 let temp = numbers[i]
+//                 numbers[i] = numbers[i+1]
+//                 numbers[i+1] = temp
+//             }
+//         }
+//     }
+//     smallestArr.push(numbers[0])
+//     return smallestArr
+// }
+// console.log(findNum([2,1,4,6,3]))
+
+// function stringFunc(strings) {
+//     let longestStr = strings[0];
+//     for (let el of strings) {
+//         if (el.length > longestStr.length) {
+//             longestStr = el;
+//         }
+//     }
+//     return longestStr;
+// }
+
+// console.log(stringFunc(["Hello", "Helloo", "Hellooo", "Hell"]));
