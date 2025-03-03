@@ -39,3 +39,34 @@
 // let team3 = console.log(`Third Team`,names.slice(4,6))
 // let team4 = console.log(`Forth Team`,names.slice(6,8))
 // let team5 = console.log(`Fifth Team`,names.slice(8,10))
+
+// let names = ["John", "Mary", "Sarah", "Taylor", "Olivia", "Tom", "lalal", "kuha"]
+ 
+// for(let i=0; i<names.length; i+=2){
+//     console.log(names.slice(i, i+2))
+// }
+ 
+ 
+ 
+ 
+ 
+// ///// Eka's version
+// let names = ["John", "Mary", "Sarah", "Taylor", "Olivia", "Tom", "lalal", "kuha"]
+ 
+// // for(let i=0; i<names.length; i+=2){
+// //     let array = []
+ 
+// //     array.push(names[i])
+// //     array.push(names[i+1])
+// //     console.log(array)
+// // }
+
+// while(names.length != 0){
+//     let randomIndex1 = Math.floor(Math.random() * names.length)  
+//     let randomIndex2 = Math.floor(Math.random() * names.length)
+//     if(randomIndex1 != randomIndex2){
+ 
+//         console.log(names.splice(randomIndex1,1), names.splice(randomIndex2,1))
+ 
+//     }
+// }
