@@ -30,7 +30,7 @@
 //         }
 //     }
 // }
-// console.log(arr.slice(5,8))
+// console.log(arr.slice(arr.length-3,arr.length))
 
 // დავალება N4
 // let names = ["John", "Jane", "Mike", "Sarah", "David", "Emily", "Michael", "Emma", "Sophia", "Andrew"]
