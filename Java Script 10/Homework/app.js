@@ -1,6 +1,5 @@
-let main = document.querySelector("main");
-let sortBtn = document.querySelector(".sortBtn");
-let sortBtn2 = document.querySelector(".sortBtn2");
+
+
 let car = [{
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2019_BMW_X5_M50d_Automatic_3.0.jpg/640px-2019_BMW_X5_M50d_Automatic_3.0.jpg",
     title: "BMW X5",
@@ -63,52 +62,52 @@ let car = [{
 }
 ]
 
+let main = document.querySelector("main");
+let sortDropdown = document.querySelector(".SortClass");
+let inp = document.querySelector(".inp")
+
 function render(arr) {
-    main.innerHTML =""
-    for(let el of arr){
-        main.innerHTML +=
-    `
-    <div class="card" style="width: 500px;">
-      <img src="${el.image}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">${el.title}</h5>
-        <p class="card-text">${el.price + " " + el.currency}</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    `
+    main.innerHTML = ""; // Clear any existing content
+    for (let el of arr) {
+        main.innerHTML += `
+            <div class="card" style="width: 500px;">
+                <img src="${el.image}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">${el.title}</h5>
+                    <p class="card-text">${el.price + " " + el.currency}</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        `;
     }
 }
-render(car)
-sortBtn.addEventListener("click", function(){
-    main.innerHTML = ""
-    let sortedCar = car.sort((a,b) => a.price - b.price)
-    for(let el of sortedCar){
-        main.innerHTML += 
-    `
-    <div class="card" style="width: 500px;">
-      <img src="${el.image}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">${el.title}</h5>
-        <p class="card-text">${el.price + " " + el.currency}</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    `
-    }})
-    sortBtn2.addEventListener("click", function(){
-        main.innerHTML = ""
-        let sortedCar = car.sort((a,b) => b.price - a.price)
-        for(let el of sortedCar){
-            main.innerHTML += 
-        `
-        <div class="card" style="width: 500px;">
-          <img src="${el.image}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">${el.title}</h5>
-            <p class="card-text">${el.price + " " + el.currency}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-        `
-        }})
+
+// Initially render the cars when the page loads
+render(car);
+
+sortDropdown.addEventListener("change", function () {
+    let sortedCar;
+    main.innerHTML = ""; // Clear current content
+
+    // Check the selected value of the dropdown
+    if (sortDropdown.value === "price-asc") {
+        sortedCar = [...car].sort((a, b) => a.price - b.price); // sort by price ascending
+    } else if (sortDropdown.value === "price-desc") {
+        sortedCar = [...car].sort((a, b) => b.price - a.price); // sort by price descending
+    } else if (sortDropdown.value === "title-asc") {
+        sortedCar = [...car].sort((a, b) => a.title.localeCompare(b.title)); // sort by title A-Z
+    } else if (sortDropdown.value === "title-desc") {
+        sortedCar = [...car].sort((a, b) => b.title.localeCompare(a.title)); // sort by title Z-A
+    } else {
+        // If "default" is selected, just return the array as is
+        sortedCar = [...car]; // Copy the original array to preserve its order
+    }
+
+    // Render the sorted or default cars
+    render(sortedCar);
+});
+inp.addEventListener("input", function(){
+  console.log(inp.value)
+  let filteredArr = car.filter(el => el.title.toLowerCase().includes(inp.value.toLowerCase()))
+  render(filteredArr)
+})
