@@ -9,14 +9,18 @@
 }
 .guess{
     width: 100%;
-    height: 60vh;
+    height: 55vh;
 }
 .cycle{
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    gap: 100px! important;
     cursor: pointer;
+    margin-left: 200px;
+}
+.cycle:active {
+    transform: scale(0.9); 
+    background-color: darkblue; 
 }
 #message{
     text-align: center;
