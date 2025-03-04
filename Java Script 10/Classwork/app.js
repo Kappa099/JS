@@ -199,6 +199,7 @@ function rander(arr) {
     }
 }
 
+
 rander(products)
 
 

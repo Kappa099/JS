@@ -1,5 +1,4 @@
 
-
 let car = [{
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2019_BMW_X5_M50d_Automatic_3.0.jpg/640px-2019_BMW_X5_M50d_Automatic_3.0.jpg",
     title: "BMW X5",
@@ -67,10 +66,10 @@ let sortDropdown = document.querySelector(".SortClass");
 let inp = document.querySelector(".inp")
 
 function render(arr) {
-    main.innerHTML = ""; // Clear any existing content
+    main.innerHTML = ""; 
     for (let el of arr) {
         main.innerHTML += `
-            <div class="card" style="width: 500px;">
+            <div class="card" style="width:500px;">
                 <img src="${el.image}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">${el.title}</h5>
@@ -82,28 +81,24 @@ function render(arr) {
     }
 }
 
-// Initially render the cars when the page loads
 render(car);
+
 
 sortDropdown.addEventListener("change", function () {
     let sortedCar;
-    main.innerHTML = ""; // Clear current content
+    main.innerHTML = ""; 
 
-    // Check the selected value of the dropdown
-    if (sortDropdown.value === "price-asc") {
-        sortedCar = [...car].sort((a, b) => a.price - b.price); // sort by price ascending
-    } else if (sortDropdown.value === "price-desc") {
-        sortedCar = [...car].sort((a, b) => b.price - a.price); // sort by price descending
-    } else if (sortDropdown.value === "title-asc") {
-        sortedCar = [...car].sort((a, b) => a.title.localeCompare(b.title)); // sort by title A-Z
-    } else if (sortDropdown.value === "title-desc") {
-        sortedCar = [...car].sort((a, b) => b.title.localeCompare(a.title)); // sort by title Z-A
+    if (sortDropdown.value == "price-asc") {
+        sortedCar = [...car].sort((a, b) => a.price - b.price);
+    } else if (sortDropdown.value == "price-desc") {
+        sortedCar = [...car].sort((a, b) => b.price - a.price);
+    } else if (sortDropdown.value == "title-asc") {
+        sortedCar = [...car].sort((a, b) => a.title.localeCompare(b.title));
+    } else if (sortDropdown.value == "title-desc") {
+        sortedCar = [...car].sort((a, b) => b.title.localeCompare(a.title));
     } else {
-        // If "default" is selected, just return the array as is
-        sortedCar = [...car]; // Copy the original array to preserve its order
+        sortedCar = [...car]; 
     }
-
-    // Render the sorted or default cars
     render(sortedCar);
 });
 inp.addEventListener("input", function(){

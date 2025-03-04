@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#game-container{
+    width: 100%;
+    height: auto;;
+}
+.guess{
+    width: 100%;
+    height: 60vh;
+}
+.cycle{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    gap: 100px! important;
+    cursor: pointer;
+}
+#message{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 50px
+}
+#new-game{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: green;
+}
