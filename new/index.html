@@ -5,30 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .box{
-            width: 200px;
-            height: 200px;
-            background-color: lightgray;
-        }
-        #change-color{
-            padding: 20px;
-            width: 100px;
-            background-color: blue;
-            font-size: 20px;
-            color: red;
-        }
+        /* General styling for the body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Container for the product catalog */
+#product-list {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Button styling */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #4CAF50;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for buttons */
+button:hover {
+    background-color: #45a049;
+}
+
+/* Styling for product list */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.product-name {
+    font-weight: bold;
+}
+
+.product-price {
+    color: #333;
+}
+
+.product-stock {
+    font-size: 14px;
+    color: #888;
+}
+
     </style>
 </head>
 <body>
     
-<div class="box">
-
-    <p class="text"></p>
-</div>
-<button id="change-color">Change Color</button>
-<button id="toggle-box">Hide Box</button>
-<button id="increase-size">Increase Size</button>  
-<button id="decrease-size">Decrease Size</button> 
+    <div id="product-list"></div>
+    <button id="add-product-btn">Add Product</button>
+    <button id="increase-btn">Increase Stock</button>
+    <button id="decrease-btn">Decrease Stock</button>
+    <button id="check-availability-btn">Check Availability</button>
 
     <script src="./app.js"></script>
 </body>
