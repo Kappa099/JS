@@ -1,0 +1,98 @@
+.mainCont{
+    width: 100%;
+    height: 100px;
+}
+
+.cont{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+.circle{
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.dialog{
+    flex-direction: column;
+    width: 200px;
+    height: 200px;
+    background-color: yellow;
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 30%;
+}
+.timeout{
+    flex-direction: column;
+    width: 200px;
+    height: 200px;
+    background-color: yellow;
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 30%;
+}
+.name {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: auto; /* Allow content to fit nicely */
+    background-color: #FFEB3B; /* A soft yellow color */
+    border-radius: 10px; /* Rounded corners for a smoother look */
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the div on the screen */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* A soft shadow around the box */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.name input,
+.name button {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.name button {
+    background-color: #ff9800;
+    color: white;
+    cursor: pointer;
+}
+
+.name button:hover {
+    background-color: #e68900; 
+}
+
+.name input {
+    width: 100%;
+    border-color: #ff9800; 
+    outline: none;
+}
+
+.name input:focus {
+    border-color: #e68900; 
+}
+.timer {
+    font-size: 2em;
+    color: red;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
+}
+

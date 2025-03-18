@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sorting">
+        <select id="sort" class="SortClass">
+            <option value="default">Default</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="title-asc">Title: A to Z</option>
+            <option value="title-desc">Title: Z to A</option>
+            <option value="rating-asc">Rating: Low to High</option>
+            <option value="rating-desc">Rating: High to Low</option>
+        </select>        
+        <div class="search">
+            <label for="inp">Search</label>
+            <input type="text" id="inp" class="inp">
+        </div>
+    </div>
+    
+    <div class="cont"></div>
+    <script src="./app.js"></script>
+</body>
+</html>
