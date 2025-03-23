@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./details.css">
+</head>
+<body>
+
+    <div class="filter-container">
+        <div class="price">
+            <label for="price-range">Choose a price range:</label>
+            <select id="price-range" name="price-range">
+                <option value="default" selected>-- Default --</option>
+                <option value="0-100">0 - 100</option>
+                <option value="100-200">100 - 200</option>
+                <option value="200-300">200 - 300</option>
+                <option value="300-500">300 - 500</option>
+                <option value="500-1000">500 - 1000</option>
+            </select>
+        </div>
+
+        <div class="roomtype">
+            <label for="room-type">Choose a room type:</label>
+            <select id="room-type" name="room-type">
+                <option value="default-room">-- Default --</option>
+                <option value="single">Basic Room</option>
+                <option value="double">Premium Room</option>
+                <option value="family">Deluxe Room</option>
+            </select>
+        </div>
+    
+
+        <div class="guestrange">
+            <label for="guest-number">Guests</label>
+            <select name="guest-range" id="guest-range">
+                <option value="1">1 Adult</option>
+                <option value="2">2 Adults</option>
+                <option value="3">3 Adults</option>
+                <option value="4">4 Adults</option>
+                <option value="5">5 Adults</option>
+                <option value="6">6 Adults</option>
+            </select>
+        </div>
+    
+
+  
+    </div>
+    <div class="calendar">
+        <div class="date-range">
+            <label for="start-date">Start Date:</label>
+            <input type="date" id="start-date" name="start-date">
+        </div>
+    
+    
+        <div class="date-range">
+            <label for="end-date">End Date:</label>
+            <input type="date" id="end-date" name="end-date">
+        </div>
+    </div>
+    <main class="main"></main>
+    
+    <script src="./details.js"></script>
+</body>
+</html>
