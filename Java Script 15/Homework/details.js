@@ -1,18 +1,17 @@
 let main = document.querySelector('.main');
-let price = document.querySelector('.price select'); 
+let priceSlider = document.querySelector('.price input[type="range"]'); 
+let priceValueDisplay = document.querySelector('.price #price-value');
 let roomtype = document.querySelector('.roomtype');
+let guestRangeSelect = document.querySelector('#guest-range');
 let id = window.location.search.split("=")[1];
-let allRooms = []; 
-let filteredRooms = [];
-
+let allRooms = [];
 
 fetch(`https://hotelbooking.stepprojects.ge/api/Hotels/GetHotel/${id}`)
   .then(response => response.json())
   .then(hotel => renderHotelAndRooms(hotel));
 
 function renderHotelAndRooms(hotel) {
-    let allRooms = hotel.rooms; 
-    let filteredRooms = hotel.rooms;
+    allRooms = hotel.rooms;
 
     main.innerHTML = `
         <div class="hotel-details">
@@ -27,14 +26,15 @@ function renderHotelAndRooms(hotel) {
         </div>
     `;
 
-    renderRooms(filteredRooms);
+    renderRooms(allRooms); // Show all rooms initially
 }
+
 function renderRooms(rooms) {
-    let roomContainer = document.querySelector('#room-cards-container'); 
-    roomContainer.innerHTML = ""; 
+    let roomContainer = document.querySelector('#room-cards-container');
+    roomContainer.innerHTML = "";
 
     if (rooms.length === 0) {
-        roomContainer.innerHTML = "<p>No rooms available for the selected price range.</p>";
+        roomContainer.innerHTML = "<p>No rooms available for the selected filters.</p>";
     } else {
         rooms.forEach(room => {
             roomContainer.innerHTML += `
@@ -44,7 +44,7 @@ function renderRooms(rooms) {
                         <h5 class="card-title">${room.name}</h5>
                         <p class="card-text">Price: $${room.pricePerNight} per night</p>
                         <p class="card-text">Max Guests: ${room.maximumGuests}</p>
-                        <a href="#" class="btn btn-primary">Book Now</a>
+                        <a href="./rooms.html?id=${room.id}" class="btn btn-primary">Book Now</a>
                     </div>
                 </div>
             `;
@@ -52,58 +52,44 @@ function renderRooms(rooms) {
     }
 }
 
-price.addEventListener('change', function() {
-    let selectedPrice = price.value;
+priceSlider.addEventListener('input', applyFilters); 
+roomtype.addEventListener('change', applyFilters);
+guestRangeSelect.addEventListener('change', applyFilters);
 
-    if (selectedPrice === 'default') {
-        fetch(`https://hotelbooking.stepprojects.ge/api/Hotels/GetHotel/${id}`)
-          .then(response => response.json())
-          .then(hotel => renderRooms(hotel.rooms));
-    } else {
-        let priceRange = selectedPrice.split('-');
-        let minPrice = Number(priceRange[0]); 
-        let maxPrice = Number(priceRange[1]); 
+function applyFilters() {
+    let selectedType = roomtype.value;
+    let selectedPrice = priceSlider.value;  
+    let selectedGuestRange = guestRangeSelect.value;
 
-        fetch('https://hotelbooking.stepprojects.ge/api/Rooms/GetFiltered', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                priceRange: {
-                    min: minPrice,
-                    max: maxPrice
-                }
-            }),
-        })
-        .then(response => response.json())
-        .then(data => {
-            let filteredRooms = data.filter(room => room.pricePerNight >= minPrice && room.pricePerNight <= maxPrice && room.hotelId == id);
+    let roomTypeId = 0;
+    if (selectedType === 'single') roomTypeId = 1;
+    if (selectedType === 'double') roomTypeId = 2;
+    if (selectedType === 'family') roomTypeId = 3;
 
-            renderRooms(filteredRooms);  
-        })
-    }
-});
+    let priceFrom = selectedPrice;  
+    let priceTo = selectedPrice;
 
+    let maximumGuests = selectedGuestRange !== 'default-guest' ? Number(selectedGuestRange) : 0;
 
-price.dispatchEvent(new Event('change'));
+    priceValueDisplay.textContent = `$${selectedPrice}`;
 
-let roomTypeSelect = document.querySelector('#room-type');
+    let requestBody = {
+        roomTypeId: roomTypeId,
+        priceFrom: priceFrom,
+        priceTo: priceTo,
+        maximumGuests: maximumGuests,
+    };
 
-roomTypeSelect.addEventListener('change', function() {
-    let selectedType = roomTypeSelect.value;
-
-    let finalRooms = filteredRooms.filter(room => {
-        if (selectedType === 'default-room') {
-            return true;
-        } else if (selectedType === 'single') {
-            return room.name.toLowerCase().includes('basic');
-        } else if (selectedType === 'double') {
-            return room.name.toLowerCase().includes('premium');
-        } else if (selectedType === 'family') {
-            return room.name.toLowerCase().includes('deluxe');
-        }
-    });
-
-    renderRooms(finalRooms);
-});
+    fetch('https://hotelbooking.stepprojects.ge/api/Rooms/GetFiltered', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestBody),
+    })
+    .then(response => response.json())
+    .then(data => {
+        renderRooms(data); 
+    })
+    .catch(error => console.error('Error fetching filtered rooms:', error));
+}

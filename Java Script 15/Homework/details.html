@@ -10,16 +10,11 @@
 
     <div class="filter-container">
         <div class="price">
-            <label for="price-range">Choose a price range:</label>
-            <select id="price-range" name="price-range">
-                <option value="default" selected>-- Default --</option>
-                <option value="0-100">0 - 100</option>
-                <option value="100-200">100 - 200</option>
-                <option value="200-300">200 - 300</option>
-                <option value="300-500">300 - 500</option>
-                <option value="500-1000">500 - 1000</option>
-            </select>
-        </div>
+            <label for="price-range">Price</label>
+            <input type="range" id="price-range" min="0" max="1000" step="10">
+            <span id="price-value">$0</span>
+         </div>
+         
 
         <div class="roomtype">
             <label for="room-type">Choose a room type:</label>
@@ -35,7 +30,7 @@
         <div class="guestrange">
             <label for="guest-number">Guests</label>
             <select name="guest-range" id="guest-range">
-                <option value="1">1 Adult</option>
+                <option value="default-guest">-- Default --</option>
                 <option value="2">2 Adults</option>
                 <option value="3">3 Adults</option>
                 <option value="4">4 Adults</option>
@@ -46,18 +41,6 @@
     
 
   
-    </div>
-    <div class="calendar">
-        <div class="date-range">
-            <label for="start-date">Start Date:</label>
-            <input type="date" id="start-date" name="start-date">
-        </div>
-    
-    
-        <div class="date-range">
-            <label for="end-date">End Date:</label>
-            <input type="date" id="end-date" name="end-date">
-        </div>
     </div>
     <main class="main"></main>
     
