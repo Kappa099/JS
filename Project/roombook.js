@@ -63,38 +63,55 @@ fetch(`https://hotelbooking.stepprojects.ge/api/Rooms/GetRoom/${roomId}`)
 
 
 form.addEventListener("submit", function(e){
-        e.preventDefault()
-        let postObj = {
-          roomID: Number(roomId),
-          checkInDate : inpChackin.value,
-          checkOutDate : inpChackOut.value,
-          totalPrice : roomPrice,
-          isConfirmed: true,
-          customerName : inpName.value,
-          customerId : "123", 
-          customerPhone : inpPhone.value
+    e.preventDefault();
+
+    let postObj = {
+        roomID: Number(roomId),
+        checkInDate: inpChackin.value,
+        checkOutDate: inpChackOut.value,
+        totalPrice: roomPrice,
+        isConfirmed: true,
+        customerName: inpName.value,
+        customerId: "123", 
+        customerPhone: inpPhone.value
+    };
+
+    fetch("https://hotelbooking.stepprojects.ge/api/Booking", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(postObj)
+    })
+    .then(resp => {
+        if (resp.status == 200) {
+            showToast("Booked successfully!", 3000, "success");
+        } else {
+            showToast("Could not Book", 3000, "error");
         }
-  fetch("https://hotelbooking.stepprojects.ge/api/Booking", {
-    method : "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body : JSON.stringify(postObj)
+    })
+    .catch(er => {
+        showToast("Error: " + er, 3000, "error");
+    });
+});
+function showToast(message, duration = 3000, type = "success") {
+    let toast = document.createElement("div");
+    toast.classList.add("toast", type);
+    toast.textContent = message;
 
-  })
-  .then(resp => {
-    console.log(resp)
-    if(resp.status == 200){
-        alert("Booked succsefully")
-    }
-    else{
-        alert("Cound not Book")
-    }
-  })
-  .catch(er => alert(er))
-  
+    document.getElementById("toast-container").appendChild(toast);
 
-})
+    setTimeout(() => {
+        toast.classList.add("show");
+    }, 100);
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+        setTimeout(() => {
+            toast.remove();
+        }, 500);
+    }, duration);
+}
 
 chatIcon.addEventListener('click', () => {
     chatBox.style.display = 'block';

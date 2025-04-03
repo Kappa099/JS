@@ -62,14 +62,17 @@ guestRangeSelect.addEventListener('change', applyFilters);
 priceSlider.value = 0;
 priceSlider2.value = 1000;
 function applyFilters() {
-    let selectedType = roomtype.value;
-    let selectedPrice = Number(priceSlider.value);
-    let selectedPrice2 = Number(priceSlider2.value);    
-    let selectedGuestRange = guestRangeSelect.value;
 
+    let selectedType = roomtype.value;
     let roomTypeId = roomtype.value
+
+    let selectedPrice = Number(priceSlider.value);
+    let selectedPrice2 = Number(priceSlider2.value);   
     let priceFrom = selectedPrice;  
     let priceTo = selectedPrice2;
+
+    let selectedGuestRange = guestRangeSelect.value;
+
 
     if (selectedType === "-1"){
         roomTypeId = null;
@@ -81,7 +84,7 @@ function applyFilters() {
         priceSlider2.value = selectedPrice;
         selectedPrice2 = selectedPrice;
     }
-    let maximumGuests = selectedGuestRange !== 'default-guest' ? Number(selectedGuestRange) : 0;
+    let maximumGuests = selectedGuestRange !== '-1' ? Number(selectedGuestRange) : 0;
 
     priceValueDisplay.textContent = `$${selectedPrice}`;
     priceValue2Display.textContent = `$${selectedPrice2}`;
