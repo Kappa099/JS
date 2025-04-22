@@ -4,8 +4,8 @@ let roomarray = []
 let chatIcon = document.querySelector('#chat-icon');
 let chatBox = document.querySelector('#chat-box');
 let closeChat = document.querySelector('#close-chat');
-let inpChackin = document.querySelector(".inpChackin")
-let inpChackOut = document.querySelector(".inpChackOut")
+let inpCheckin = document.querySelector(".inpCheckin")
+let inpCheckOut = document.querySelector(".inpCheckOut")
 let inpName = document.querySelector(".inpName")
 let inpPhone = document.querySelector(".inpPhone")
 
@@ -19,10 +19,10 @@ let form = document.querySelector(".reservation-card")
 
 
 
-inpChackOut.addEventListener("input", function(){
-    let chackinDate = new Date(inpChackin.value)
-    let chackOutDate = new Date(inpChackOut.value)
-    let diffDays = Math.ceil((chackOutDate - chackinDate) / (1000 * 60 * 60 * 24))
+inpCheckOut.addEventListener("input", function(){
+    let CheckinDate = new Date(inpCheckin.value)
+    let CheckOutDate = new Date(inpCheckOut.value)
+    let diffDays = Math.ceil((CheckOutDate - CheckinDate) / (1000 * 60 * 60 * 24))
     roomPrice = diffDays * roomPrice
     document.querySelector(".price").textContent = `Total Price : ${roomPrice}$`
     
@@ -32,7 +32,6 @@ fetch(`https://hotelbooking.stepprojects.ge/api/Rooms/GetRoom/${roomId}`)
   .then(room => {
     renderproduct(room)
   })
-
   function renderproduct(room) {
     console.log(room)
     roomPrice = room.pricePerNight
@@ -67,8 +66,8 @@ form.addEventListener("submit", function(e){
 
     let postObj = {
         roomID: Number(roomId),
-        checkInDate: inpChackin.value,
-        checkOutDate: inpChackOut.value,
+        checkInDate: inpCheckin.value,
+        checkOutDate: inpCheckOut.value,
         totalPrice: roomPrice,
         isConfirmed: true,
         customerName: inpName.value,

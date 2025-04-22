@@ -347,16 +347,18 @@ header a {
     z-index: 999;
   }
   
-  /* Toast Style */
+
   .toast {
     background-color: #333;
     color: white;
-    padding: 10px 20px;
+    padding: 20px 100px;
     margin: 5px 0;
     border-radius: 5px;
     font-size: 16px;
     opacity: 0;
     transition: opacity 0.5s;
+    font-size: 18px !important;
+    font-family: 'Arial', sans-serif; 
   }
   
   .toast.show {
