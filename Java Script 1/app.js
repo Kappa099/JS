@@ -125,17 +125,49 @@
 // და თუ დაუშვა
 // მაშინ კონსოლში დაუვეჭდეთ "არასწორი ინფუთი"
 
-let userAge = Number(prompt())
+// let userAge = Number(prompt())
 
-if (userAge > 6 && userAge < 18) {
-      console.log("უფასო")
-}
-else if (userAge > 18 && userAge < 60){
-      console.log("მთლიანი ფასი")
-}
-else if (userAge > 60){
-      console.log("ნახევარი ფასი")
-}
-else {
-      console.log("არასწორი ინფუთი")
-}
+// if (userAge > 6 && userAge < 18) {
+//       console.log("უფასო")
+// }
+// else if (userAge > 18 && userAge < 60){
+//       console.log("მთლიანი ფასი")
+// }
+// else if (userAge > 60){
+//       console.log("ნახევარი ფასი")
+// }
+// else {
+//       console.log("არასწორი ინფუთი")
+// }
+
+// console.log("15"+"2")
+
+// let num1 = Number(prompt("Enter First Number"))
+// let op = prompt("Enter Operation")
+// let num2 = Number(prompt("Enter Second Number"))
+
+// if (!isNaN(num1) && !isNaN(num2)) {
+//       if (op == "+") {
+//             console.log(num1 + num2)
+//       }
+//       else if(op == "-"){
+//             console.log(num1 - num2)
+//       }
+//       else if(op == "/"){
+//             if (num2 != 0){
+//                   console.log(num1 / num2)
+//             }
+//       }
+//       else if(op == "*"){
+//             console.log(num1 * num2)
+//       }
+// }
+
+// let pass = "password"
+// let password = prompt("Enter your Password")
+// if (pass == password){
+//       console.log("Success")
+// }
+// else {
+//       console.log("error")
+// }
