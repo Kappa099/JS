@@ -204,6 +204,25 @@
 
 
 
-let arr = [10,20]
-arr.push(15)
-arr.unshift(5)
+// let arr = [10,20]
+// arr.push(15)
+// arr.unshift(5)
+// console.log(arr)
+
+// let r = Math.round(Math.random()*255)
+// let g = Math.round(Math.random()*255)
+// let b = Math.round(Math.random()*255)
+// let arr = []
+
+// while (arr.length < 10){
+    
+//     let r = Math.round(Math.random()*255)
+//     let g = Math.round(Math.random()*255)
+//     let b = Math.round(Math.random()*255)
+//     arr.push(`rgb(${r},${g},${b})`)
+// }
+// console.log(arr)
+
+// 4.	შექმენით სახელების ლუწი რაოდენობის მქონე არაი და დაყავით ორ-ორი წევრისგან შემდგარ ჯგუფებად. 
+// (წარმოიდგინეთ გაქვთ თამაში სადაც ორი ადამიანი თამაშობს და სიიდან ყველა უნდა გადანაწილდეს ორკაციან ჯგუფში)
+let names = ["Jack", "Bob", "Jhonny", "Bonny", "Donny", "Bobby"]
