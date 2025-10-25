@@ -126,6 +126,20 @@
 
 
 
-for(let i = 1; i<100; i+=2){
-    console.log(i)
+// for(let i = 1; i<100; i+=2){
+//     console.log(i)
+//   }
+
+// let Num = Number(prompt("Enter Number from 50-100"))
+// for(let i = 3; i<Num; i+=3){
+//     console.log(i)
+// }
+
+let Arr = [10,20,15,3,12,13,25,34,58]
+let found = false
+for (let i = 0; i<Arr.length; i++){
+  if (Arr[i] == 10){
+    found = true
   }
+}
+console.log(found)

@@ -46,18 +46,18 @@
 // false.
 //  iterator
 
- let arr = [20,30,60,20, 10]
-      //     0  1  2  3   4
- for(let i=0; i<arr.length; i++){
-      console.log(arr[i])
-    if(arr[i]==10){
-        console.log(true)
-    }
-    else {
-        console.log(false)
-    }
-    console.log(arr[i]==10)
- }
+//  let arr = [20,30,60,20, 10]
+//       //     0  1  2  3   4
+//  for(let i=0; i<arr.length; i++){
+//       console.log(arr[i])
+//     if(arr[i]==10){
+//         console.log(true)
+//     }
+//     else {
+//         console.log(false)
+//     }
+//     console.log(arr[i]==10)
+//  }
 
 
 
@@ -193,13 +193,17 @@
 // let randColor = `rgb(${r},${g},${b})`
 
 
-let r = Math.round(Math.random()*255)
-let g = Math.round(Math.random()*255)
-let b = Math.round(Math.random()*255)
-let randColor = `rgb(${r},${g},${b})`
+// let r = Math.round(Math.random()*255)
+// let g = Math.round(Math.random()*255)
+// let b = Math.round(Math.random()*255)
+// let randColor = `rgb(${r},${g},${b})`
 
 
-// document.body.style.backgroundColor = randColor
-console.log(randColor)
+// // document.body.style.backgroundColor = randColor
+// console.log(randColor)
 
 
+
+let arr = [10,20]
+arr.push(15)
+arr.unshift(5)

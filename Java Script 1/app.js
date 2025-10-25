@@ -171,24 +171,24 @@
 // else {
 //       console.log("error")
 // }
-let number1 = Number(prompt("Enter first Number"))
-let number2 = Number(prompt("Enter Second Number"))
-let number3 = Number(prompt("Enter Last Number"))
+// let number1 = Number(prompt("Enter first Number"))
+// let number2 = Number(prompt("Enter Second Number"))
+// let number3 = Number(prompt("Enter Last Number"))
 
-if (!isNaN(number1) && !isNaN(number2) && !isNaN(number3)){
-      if (number1 > number3 + number2){
-      console.log("Incorrect Triangle")
-      }
-      else if (number2 > number1 + number3){
-            console.log("Incorrect Triangle")
-      }
-      else if (number3 > number1 + number2){
-            console.log("Incorrect Triangle")
-      }
-      else {
-            console.log("This is triangle")
-      }
-}
-else {
-      console.log("enter valid numbers")
-}
+// if (!isNaN(number1) && !isNaN(number2) && !isNaN(number3)){
+//       if (number1 > number3 + number2){
+//       console.log("Incorrect Triangle")
+//       }
+//       else if (number2 > number1 + number3){
+//             console.log("Incorrect Triangle")
+//       }
+//       else if (number3 > number1 + number2){
+//             console.log("Incorrect Triangle")
+//       }
+//       else {
+//             console.log("This is triangle")
+//       }
+// }
+// else {
+//       console.log("enter valid numbers")
+// }
