@@ -212,25 +212,25 @@ function multiply(x=1,y=1,g=1,b=1) {
 
 ///////////////  single respon
 
-function getRandomColor() {
-    let r = Math.round(Math.random()*255)
-    let g = Math.round(Math.random()*255)
-    let b =Math.round(Math.random()*255)
-    let randomColor = `rgb(${r},${g},${b})`
-    return randomColor
-}
+// function getRandomColor() {
+//     let r = Math.round(Math.random()*255)
+//     let g = Math.round(Math.random()*255)
+//     let b =Math.round(Math.random()*255)
+//     let randomColor = `rgb(${r},${g},${b})`
+//     return randomColor
+// }
 
-function makeArr(x) {
-    let arr = []
-  for(let i=0; i<x; i++){
-    arr.push(getRandomColor())
-  }
-  return arr
-}
+// function makeArr(x) {
+//     let arr = []
+//   for(let i=0; i<x; i++){
+//     arr.push(getRandomColor())
+//   }
+//   return arr
+// }
 
 
 
-console.log(makeArr(10))
+// console.log(makeArr(10))
 
 
 
@@ -239,5 +239,55 @@ console.log(makeArr(10))
 
 
 
+// function greet(){
+//   console.log("Hello JS")
+// }
 
+// greet()
 
+// function rand(){
+//   let num = Math.round(Math.random()*100)
+//   return num
+// }
+
+// console.log(rand())
+
+// function greet(name){
+//   console.log(`Hello ${name}`)
+// }
+
+// greet(prompt())
+
+// function warning(){
+//     console.log("Welcome")
+// }
+
+// warning(alert("This website will use your data"))
+
+// 5.	შექმენით ფუნქცია რომელიც პარამეტრად მიიღებს არაის და რიცხვს და დააბრუენებს true -ს
+//  იმ შემთხვევაში თუ ეს პარამეტრად გადაცემული რიცხვი არის ამ პარამეტრად გადაცემულ არაიში და false -ს თუ არ არის.
+
+// function func(array, num) {
+//   for (let el of array) {
+//     if (num === el) {
+//       return true;  
+//     }
+//   }
+//   return false;     
+// }
+
+// let funct = func([10, 20, 30, 40, 50], 60);
+// console.log(funct);
+
+// 6.	შექმენით ფუნქცია რომელიც პარამეტრად მიიღებს სტრინგს (იმეილს) და შეამოწმებს თუ არის ამ იმეილში @ ნიშანი და დააბრუნებს true ან false
+
+function validator(email){
+
+  for (let i = 0; i< email.length ; i++){
+    if (email[i] == "@"){
+      return true
+    }
+  }
+  return false
+}
+console.log(validator("vako.kapa@gmail.com"))
