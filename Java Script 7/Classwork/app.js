@@ -281,13 +281,14 @@ function multiply(x=1,y=1,g=1,b=1) {
 
 // 6.	შექმენით ფუნქცია რომელიც პარამეტრად მიიღებს სტრინგს (იმეილს) და შეამოწმებს თუ არის ამ იმეილში @ ნიშანი და დააბრუნებს true ან false
 
-function validator(email){
+// function validator(email){
 
-  for (let i = 0; i< email.length ; i++){
-    if (email[i] == "@"){
-      return true
-    }
-  }
-  return false
-}
-console.log(validator("vako.kapa@gmail.com"))
+//   for (let i = 0; i< email.length ; i++){
+//     if (email[i] == "@"){
+//       return true
+//     }
+//   }
+//   return false
+// }
+// console.log(validator("vako.kapa@gmail.com"))
+

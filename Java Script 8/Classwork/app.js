@@ -220,31 +220,88 @@
 
 ////////////////////////////////////////////////   
 
-function creditscore() {
-    return Math.floor(Math.random() * 101);
-}
+// function creditscore() {
+//     return Math.floor(Math.random() * 101);
+// }
  
-function sayhi() {
-    const userName = prompt("გთხოვთ შეიყვანოთ სახელი და გვარი:");
-    if (userName) {
-        const score = creditscore();
-        const color = score > 50 ? 'green' : 'red';
-        const message = score > 50 ? 'გილოცავთ თქვენ ბრძანდებით კარგი მოქალაქე.' : 'თქვენი წუთები დათვლილია';
-        document.body.innerHTML += `<p>მოგესალმებით, ${userName}, ${message}, Social Credit: <span style="color:${color}">${score}</span></p>`;
-    }
-}
+// function sayhi() {
+//     const userName = prompt("გთხოვთ შეიყვანოთ სახელი და გვარი:");
+//     if (userName) {
+//         const score = creditscore();
+//         const color = score > 50 ? 'green' : 'red';
+//         const message = score > 50 ? 'გილოცავთ თქვენ ბრძანდებით კარგი მოქალაქე.' : 'თქვენი წუთები დათვლილია';
+//         document.body.innerHTML += `<p>მოგესალმებით, ${userName}, ${message}, Social Credit: <span style="color:${color}">${score}</span></p>`;
+//     }
+// }
  
-function showAlertAndGreetUser() {
-    alert("თქვენს პირად მონაცემებს აგროვებს ჩინეთის მთავრობა");
-    const userName = prompt("გთხოვთ შეიყვანოთ სახელი და გვარი:");
-    if (userName && /^[^\d]+$/.test(userName)) {
-        const score = creditscore();
-        const color = score > 50 ? 'green' : 'red';
-        const message = score > 50 ? 'გილოცავთ თქვენ ბრძანდებით კარგი მოქალაქე.' : 'თქვენი წუთები დათვლილია';
-        const additionalMessage = score > 50 ? '' : ' ჩინეთის მთავრობის მიერ';
-        document.body.innerHTML += `<p>გამარჯობა, ${userName}, ${message}${additionalMessage} <br> სოციალური კრედიტი: <span style="color:${color}; font-weight: bold; font-size: 2em;">${score}</span></p>`;
-    }
-}
+// function showAlertAndGreetUser() {
+//     alert("თქვენს პირად მონაცემებს აგროვებს ჩინეთის მთავრობა");
+//     const userName = prompt("გთხოვთ შეიყვანოთ სახელი და გვარი:");
+//     if (userName && /^[^\d]+$/.test(userName)) {
+//         const score = creditscore();
+//         const color = score > 50 ? 'green' : 'red';
+//         const message = score > 50 ? 'გილოცავთ თქვენ ბრძანდებით კარგი მოქალაქე.' : 'თქვენი წუთები დათვლილია';
+//         const additionalMessage = score > 50 ? '' : ' ჩინეთის მთავრობის მიერ';
+//         document.body.innerHTML += `<p>გამარჯობა, ${userName}, ${message}${additionalMessage} <br> სოციალური კრედიტი: <span style="color:${color}; font-weight: bold; font-size: 2em;">${score}</span></p>`;
+//     }
+// }
 
 
-showAlertAndGreetUser()
+// showAlertAndGreetUser()
+
+// arr = [20,40,50,100,95,201]
+
+// console.log(arr.sort((el1, el2) => el1 - el2))
+
+// 1.	შექმენით ფუნქცია რომელსაც პარამეტრებად გადაეცემა სტრინგების არაი და სტრინგი. დააბრუნებს ამ არაიდან დაფილტრულ ელემენტებს რომლებიც შეიცავს ამ სტრინგს.
+
+// let arr = ["John", "James", "Dan", "Robby", "Bobby", "Sonny"]
+// function filt(arr, str){
+//     let filtered = arr.filter(arr => arr.toLowerCase().includes(str.toLowerCase()))
+//     return filtered
+// }
+// console.log(filt(arr,"James"))
+
+// 2.	შექმენით ფუნქცია რომელსაც პარამეტრად გადაეცემა რიცხვების არაი და ორი რიცხვი, დააბრუნებს ისეთი რიცხვების არაის რომლებიც პარამეტრად გადაცემული 
+// არაიში არსებობენ და თავსდებიან პარამეტრად გადაცემულ ორ რიცხვს შორის ინტერვალში.
+
+// function func(arr, num1, num2){
+//     let min = Math.min(num1, num2)
+//     let max = Math.max(num1, num2)
+//     let filtered = arr.filter(el => el>min && el<max)
+//     return filtered
+
+// }
+// arr = [5,10,30,15,25,13]
+// console.log(func(arr,11,32))
+
+// 3.	შექმენით ფუნქცია რომელსაც პარამეტრად გადაეცემა სიტყვა და წინადადებების არაი. 
+// დააბრუნებს true -ს თუ ყველა წინადადება შეიცავს ამ სიტყვას.
+
+// let func = (word, sentence) => sentence.every(el => el.includes(word))
+// let word = "dog"
+// let sentences = [
+//   "I have a dog in my house.",
+//   "The neighbor’s dog is very friendly.",
+//   "Every child loves a dog story."
+// ];
+// console.log(func(word,sentences))
+
+// 4.	შექმენით ფუნქცია რომელსაც პარამეტრად გადაეცემა რიცხვი და რიცხვების არაი. დააბრუნებს true -ს 
+// თუ ზოგიერთი რიცხვი მაინც მეტია ამ არაიში პარამეტრად გადაცემულ რიცხვზე.
+
+// let func = (arr, num) => arr.some(el => el>num)
+// let array = [10,20,30,40]
+// let num = 39
+// console.log(func(array,num))
+
+// 1.	შექმენით ფუნქცია რომელსაც პარამეტრად გადაეცემა არაი და დააბრუნებს არაის 
+// სადაც გვექნება პარამეტრად გადაცემული არაის ყველა ელემენტი გამრავლებული 10
+
+// let func = (arr) => arr.map(el => el*10)
+// console.log(func([1,2,5,10]))
+
+// let arr = [1,2,5,10]
+// let vv = []
+// arr.forEach(el => vv.push(el*10))
+// console.log(vv)

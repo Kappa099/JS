@@ -321,112 +321,149 @@
 
 
 
-let userArr = [
-    {
-        userName: "John",
-        age : 16,
-        paswword : {
-            passValueCurent : "dsdfg",
-            lastUpdate : "12,02,2025",
-            passValueOld : ""
-        },
-        email : "fgfg",
-        immage : "https://as1.ftcdn.net/v2/jpg/03/46/83/96/1000_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg",
-        isActive : true,
-        followers : ["James", "Emma"],
-        address : {
-            city : "Tbilisi",
-            street : "Rustaveli",
-            country : "Georgia",
-            house : {
-                number : 12,
-                floor : 4
-            }
-        },
-        friends : [
-            {
-                name : "dfg",
-                lastName : "dsffg",
-                age : 30,
-                frendInCommon : "dfgsdf"
-            },
-            {
-                name : "dfghg",
-                lastName : "dsffg",
-                age : 60,
-                frendInCommon : ""
-            },
-            {
-                name : "dfghg",
-                lastName : "dsffg",
-                age : 60,
-                frendInCommon : ""
-            }
-        ]
+// let userArr = [
+//     {
+//         userName: "John",
+//         age : 16,
+//         paswword : {
+//             passValueCurent : "dsdfg",
+//             lastUpdate : "12,02,2025",
+//             passValueOld : ""
+//         },
+//         email : "fgfg",
+//         immage : "https://as1.ftcdn.net/v2/jpg/03/46/83/96/1000_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg",
+//         isActive : true,
+//         followers : ["James", "Emma"],
+//         address : {
+//             city : "Tbilisi",
+//             street : "Rustaveli",
+//             country : "Georgia",
+//             house : {
+//                 number : 12,
+//                 floor : 4
+//             }
+//         },
+//         friends : [
+//             {
+//                 name : "dfg",
+//                 lastName : "dsffg",
+//                 age : 30,
+//                 frendInCommon : "dfgsdf"
+//             },
+//             {
+//                 name : "dfghg",
+//                 lastName : "dsffg",
+//                 age : 60,
+//                 frendInCommon : ""
+//             },
+//             {
+//                 name : "dfghg",
+//                 lastName : "dsffg",
+//                 age : 60,
+//                 frendInCommon : ""
+//             }
+//         ]
     
-    },
-    {
-        userName: "Emma",
-        age : 20,
-        paswword : {
-            passValueCurent : "dsdfg",
-            lastUpdate : "12,01,2025",
-            passValueOld : ""
-        },
-        email : "fgfg",
-        immage : "https://as1.ftcdn.net/v2/jpg/03/46/83/96/1000_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg",
-        isActive : true,
-        followers : ["James", "Emma"],
-        address : {
-            city : "Tbilisi",
-            street : "",
-            country : "Georgia",
-            house : {
-                number : 12,
-                floor : 4
-            }
-        },
-        friends : [
-            {
-                name : "dfg",
-                lastName : "dsffg",
-                age : 30,
-                frendInCommon : "dfgsdf"
-            },
-            {
-                name : "dfghg",
-                lastName : "dsffg",
-                age : 60,
-                frendInCommon : ""
-            },
-            {
-                name : "dfghg",
-                lastName : "dsffg",
-                age : 60,
-                frendInCommon : ""
-            }
-        ]
+//     },
+//     {
+//         userName: "Emma",
+//         age : 20,
+//         paswword : {
+//             passValueCurent : "dsdfg",
+//             lastUpdate : "12,01,2025",
+//             passValueOld : ""
+//         },
+//         email : "fgfg",
+//         immage : "https://as1.ftcdn.net/v2/jpg/03/46/83/96/1000_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg",
+//         isActive : true,
+//         followers : ["James", "Emma"],
+//         address : {
+//             city : "Tbilisi",
+//             street : "",
+//             country : "Georgia",
+//             house : {
+//                 number : 12,
+//                 floor : 4
+//             }
+//         },
+//         friends : [
+//             {
+//                 name : "dfg",
+//                 lastName : "dsffg",
+//                 age : 30,
+//                 frendInCommon : "dfgsdf"
+//             },
+//             {
+//                 name : "dfghg",
+//                 lastName : "dsffg",
+//                 age : 60,
+//                 frendInCommon : ""
+//             },
+//             {
+//                 name : "dfghg",
+//                 lastName : "dsffg",
+//                 age : 60,
+//                 frendInCommon : ""
+//             }
+//         ]
     
 
+//     },
+//     {
+
+//     }
+// ]
+
+
+
+
+
+// let car = {
+//     model : "BMW",
+//     brand : "X5",
+//     year : 2019
+// }
+// console.log(car)
+
+// car.engine = 5.5
+
+
+
+// console.log(car)
+
+let worker = {
+    firstName : 'John',
+    lastName : "Johnson",
+    position : "Manager",
+    address: {
+        street : 'Times Square',
+        building : 24,
+        floor: 4,
+        flat : 12
     },
-    {
-
-    }
-]
-
-
-
-
-
-let car = {
-    model : "BMW",
-    brand : "X5",
-    year : 2019
+    email : ['john@gmail.com', "jhon2gmail.com"]
 }
-console.log(car)
+// function sale(cloth, price){
+//     cloth.price < price ? console.log(`Sale! ${cloth.price}`) : console.log(cloth.price)
+// }
+// sale(clothes, 130)
+let clothes = {
+  brand: "Nike",                 
+  type: "Jacket",               
+  size: "L",                    
+  price: 120,                    
+  inStock: true,               
+  colors: ["black", "white"],    
+  materials: ["cotton", "polyester"], 
+  ratings: [4.5, 5, 4],          
+  dimensions: {
+    chest: 42,
+    length: 28,
+    sleeve: 24
+  },
+  tags: ["sport", "casual", "winter"]
+}
+clothes.colors =  ["black", "white", 'red']
+clothes.price = 125
+console.log(clothes)
 
-car.engine = 5.5
-
-
-
-console.log(car)

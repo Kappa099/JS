@@ -38,6 +38,7 @@
 // let array = [5, 6, 7, 8, 11]
 // let result = array.some(num => num %2 == 0) && array.every(num => num > 0)
 // console.log(result)
+
 // // დავალება N1
 // function strArr(arr, str){
 //     let filtered = arr.filter(el => el.includes(str))
