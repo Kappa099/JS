@@ -25,76 +25,76 @@
 
 
 
-let products = [
-    {
-        image : 'https://thumbs.dreamstime.com/z/red-apple-28018787.jpg?ct=jpeg',
-        titel : "Apple",
-        price : {
-            amount : 10,
-            currency : "USD"
-        },
-        convert : function(rate){
-            return `${Math.round(this.price.amount * rate)} GEL`
-        }
-    },
-    {
-        image : "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Banana-Single.jpg/1020px-Banana-Single.jpg?20150318233437",
-        titel : "Banana",
-        price : {
-            amount : 5,
-            currency : "USD"
-        },
-        convert : function(rate){
-            return `${Math.round(this.price.amount * rate)} GEL`
-        }
-    },
-    {
-        image : "https://media.istockphoto.com/id/1125584344/photo/watermelon-slice-isolated-on-white-background-clipping-path-full-depth-of-field.jpg?s=1024x1024&w=is&k=20&c=iHbo-1gi4fWaVGYdxfYW5UQJbyuKWsdJ7UXtjT1bWbg=",
-        titel : "Watermelon",
-        price : {
-            amount : 7,
-            currency : "USD"
-        },
-        convert : function(rate){
-            return `${Math.round(this.price.amount * rate)} GEL`
-        }
-    },
-    {
-        image : 'https://thumbs.dreamstime.com/z/red-apple-28018787.jpg?ct=jpeg',
-        titel : "ad",
-        price : {
-            amount : 10,
-            currency : "USD"
-        },
-        convert : function(rate){
-            return `${Math.round(this.price.amount * rate)} GEL`
-        }
-    },
-    {
-        image : "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Banana-Single.jpg/1020px-Banana-Single.jpg?20150318233437",
-        titel : "fdfg",
-        price : {
-            amount : 5,
-            currency : "USD"
-        },
-        convert : function(rate){
-            return `${Math.round(this.price.amount * rate)} GEL`
-        }
-    },
-    {
-        image : "https://media.istockphoto.com/id/1125584344/photo/watermelon-slice-isolated-on-white-background-clipping-path-full-depth-of-field.jpg?s=1024x1024&w=is&k=20&c=iHbo-1gi4fWaVGYdxfYW5UQJbyuKWsdJ7UXtjT1bWbg=",
-        titel : "jhj",
-        price : {
-            amount : 7,
-            currency : "USD"
-        },
-        convert : function(rate){
-            return `${Math.round(this.price.amount * rate)} GEL`
-        }
-    }
+// let products = [
+//     {
+//         image : 'https://thumbs.dreamstime.com/z/red-apple-28018787.jpg?ct=jpeg',
+//         titel : "Apple",
+//         price : {
+//             amount : 10,
+//             currency : "USD"
+//         },
+//         convert : function(rate){
+//             return `${Math.round(this.price.amount * rate)} GEL`
+//         }
+//     },
+//     {
+//         image : "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Banana-Single.jpg/1020px-Banana-Single.jpg?20150318233437",
+//         titel : "Banana",
+//         price : {
+//             amount : 5,
+//             currency : "USD"
+//         },
+//         convert : function(rate){
+//             return `${Math.round(this.price.amount * rate)} GEL`
+//         }
+//     },
+//     {
+//         image : "https://media.istockphoto.com/id/1125584344/photo/watermelon-slice-isolated-on-white-background-clipping-path-full-depth-of-field.jpg?s=1024x1024&w=is&k=20&c=iHbo-1gi4fWaVGYdxfYW5UQJbyuKWsdJ7UXtjT1bWbg=",
+//         titel : "Watermelon",
+//         price : {
+//             amount : 7,
+//             currency : "USD"
+//         },
+//         convert : function(rate){
+//             return `${Math.round(this.price.amount * rate)} GEL`
+//         }
+//     },
+//     {
+//         image : 'https://thumbs.dreamstime.com/z/red-apple-28018787.jpg?ct=jpeg',
+//         titel : "ad",
+//         price : {
+//             amount : 10,
+//             currency : "USD"
+//         },
+//         convert : function(rate){
+//             return `${Math.round(this.price.amount * rate)} GEL`
+//         }
+//     },
+//     {
+//         image : "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Banana-Single.jpg/1020px-Banana-Single.jpg?20150318233437",
+//         titel : "fdfg",
+//         price : {
+//             amount : 5,
+//             currency : "USD"
+//         },
+//         convert : function(rate){
+//             return `${Math.round(this.price.amount * rate)} GEL`
+//         }
+//     },
+//     {
+//         image : "https://media.istockphoto.com/id/1125584344/photo/watermelon-slice-isolated-on-white-background-clipping-path-full-depth-of-field.jpg?s=1024x1024&w=is&k=20&c=iHbo-1gi4fWaVGYdxfYW5UQJbyuKWsdJ7UXtjT1bWbg=",
+//         titel : "jhj",
+//         price : {
+//             amount : 7,
+//             currency : "USD"
+//         },
+//         convert : function(rate){
+//             return `${Math.round(this.price.amount * rate)} GEL`
+//         }
+//     }
 
 
-]
+// ]
 
 
 
@@ -237,13 +237,88 @@ let products = [
 
 // print()
 
-let mnId = document.querySelector("#mnId")
-let sortBtn = document.querySelector(".sortBtn")
-let sortBtn2 = document.querySelector(".sortBtn2")
+// let mnId = document.querySelector("#mnId")
+// let sortBtn = document.querySelector(".sortBtn")
+// let sortBtn2 = document.querySelector(".sortBtn2")
 
-for (let el of products){
+// render(products)
 
-    mnId.innerHTML +=
+// function render(arr){
+//     for (let el of arr){
+//             mnId.innerHTML +=
+
+// `<div class="card" style="width: 18rem;">
+//   <img src="${el.image}" class="card-img-top" alt="...">
+//   <div class="card-body">
+//     <h5 class="card-title">${el.titel}}</h5>
+//     <p class="card-text">${el.convert(2.85)}</p>
+//     <a href="#" class="btn btn-primary">Go somewhere</a>
+//   </div>
+// </div>
+// `
+
+//     }
+// }
+
+// sortBtn.addEventListener("click", function(){
+//         mnId.innerHTML = ""
+//         let ascend = products.sort((el1, el2)=> el1.price.amount - el2.price.amount)
+//         render(ascend)
+// })
+
+// sortBtn2.addEventListener("click", function(){
+//     mnId.innerHTML = ""
+
+//     let descend = products.sort((el1, el2)=> el2.price.amount - el1.price.amount)
+//     render(descend)
+
+// })
+
+const cars = [
+  {
+    brand: "Toyota",
+    model: "Corolla",
+    year: 2020,
+    color: "White",
+    price: 15000
+  },
+  {
+    brand: "BMW",
+    model: "X5",
+    year: 2019,
+    color: "Black",
+    price: 42000
+  },
+  {
+    brand: "Mercedes",
+    model: "C-Class",
+    year: 2021,
+    color: "Silver",
+    price: 38000
+  },
+  {
+    brand: "Honda",
+    model: "Civic",
+    year: 2018,
+    color: "Blue",
+    price: 13000
+  },
+  {
+    brand: "Ford",
+    model: "Mustang",
+    year: 2022,
+    color: "Red",
+    price: 50000
+  },
+  {
+    brand: "Kia",
+    model: "Sportage",
+    year: 2020,
+    color: "Gray",
+    price: 20000
+  }
+];
+
 
 `<div class="card" style="width: 18rem;">
   <img src="${el.image}" class="card-img-top" alt="...">
@@ -254,39 +329,3 @@ for (let el of products){
   </div>
 </div>
 `
-}
-sortBtn.addEventListener("click", function(){
-        mnId.innerHTML = ""
-        let ascend = products.sort((el1, el2)=> el1.price.amount - el2.price.amount)
-        for (let el of ascend){
-
-        mnId.innerHTML +=
-
-    `<div class="card" style="width: 18rem;">
-    <img src="${el.image}" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">${el.titel}}</h5>
-        <p class="card-text">${el.convert(2.85)}</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-    </div>
-    `
-}})
-
-sortBtn2.addEventListener("click", function(){
-    mnId.innerHTML = ""
-
-    let descend = products.sort((el1, el2)=> el2.price.amount - el1.price.amount)
-    for (let el of descend){
-            mnId.innerHTML +=
-
-        `<div class="card" style="width: 18rem;">
-        <img src="${el.image}" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">${el.titel}}</h5>
-            <p class="card-text">${el.convert(2.85)}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        </div>
-        `
-}})
