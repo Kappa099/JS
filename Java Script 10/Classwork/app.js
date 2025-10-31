@@ -152,10 +152,10 @@ let products = [
 // let b  = Math.round(Math.random()*255)
 // let randomColor = `rgb(${r},${g},${b})`
 
-let mnId = document.querySelector("#mnId")
-let sortBtn =  document.querySelector(".sortBtn")
-let sortBtn2 =  document.querySelector(".sortBtn2")
-let inp = document.querySelector(".inp")
+// let mnId = document.querySelector("#mnId")
+// let sortBtn =  document.querySelector(".sortBtn")
+// let sortBtn2 =  document.querySelector(".sortBtn2")
+// let inp = document.querySelector(".inp")
 // let firstP = document.querySelector(".firstP")
 
 
@@ -182,57 +182,111 @@ let inp = document.querySelector(".inp")
 // </div>
 // `
 
-function rander(arr) {
-    mnId.innerHTML =""
-    for(let el of arr){
+// function rander(arr) {
+//     mnId.innerHTML =""
+//     for(let el of arr){
+//         mnId.innerHTML +=
+//     `
+//     <div class="card" style="width: 18rem;">
+//       <img src="${el.image}" class="card-img-top" alt="...">
+//       <div class="card-body">
+//         <h5 class="card-title">${el.titel}</h5>
+//         <p class="card-text">${el.convert(2.85)}</p>
+//         <a href="#" class="btn btn-primary">Go somewhere</a>
+//       </div>
+//     </div>
+//     `
+//     }
+// }
+
+
+// rander(products)
+
+
+// sortBtn.addEventListener("click", function(){
+//     let sortedArr = products.sort((a,b)=> a.price.amount - b.price.amount)
+//     rander(sortedArr)
+// })
+
+
+// sortBtn2.addEventListener("click", function(){
+//     let sortedArr = products.sort((a,b)=>  b.price.amount - a.price.amount )
+//     rander(sortedArr)
+// })
+
+
+// // live search
+
+// inp.addEventListener("input", function(){
+//     console.log(inp.value)
+//     let filteredArr = products.filter(el => el.titel.toLowerCase().includes(inp.value.toLowerCase()))
+//     rander(filteredArr)
+// })
+
+
+
+// // ეროუ ფანქშენი გამოიყენება
+// ///  ერთხაზიანი უფნქცია 
+// //// ქოლბექი => როდესაც ფუნქციას პარამეტრად გადაეცემა ფუნქცია
+
+
+// let print  = x => x+10
+
+
+
+
+// print()
+
+let mnId = document.querySelector("#mnId")
+let sortBtn = document.querySelector(".sortBtn")
+let sortBtn2 = document.querySelector(".sortBtn2")
+
+for (let el of products){
+
+    mnId.innerHTML +=
+
+`<div class="card" style="width: 18rem;">
+  <img src="${el.image}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">${el.titel}}</h5>
+    <p class="card-text">${el.convert(2.85)}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+`
+}
+sortBtn.addEventListener("click", function(){
+        mnId.innerHTML = ""
+        let ascend = products.sort((el1, el2)=> el1.price.amount - el2.price.amount)
+        for (let el of ascend){
+
         mnId.innerHTML +=
-    `
-    <div class="card" style="width: 18rem;">
-      <img src="${el.image}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">${el.titel}</h5>
+
+    `<div class="card" style="width: 18rem;">
+    <img src="${el.image}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">${el.titel}}</h5>
         <p class="card-text">${el.convert(2.85)}</p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
+    </div>
     </div>
     `
-    }
-}
-
-
-rander(products)
-
-
-sortBtn.addEventListener("click", function(){
-    let sortedArr = products.sort((a,b)=> a.price.amount - b.price.amount)
-    rander(sortedArr)
-})
-
+}})
 
 sortBtn2.addEventListener("click", function(){
-    let sortedArr = products.sort((a,b)=>  b.price.amount - a.price.amount )
-    rander(sortedArr)
-})
+    mnId.innerHTML = ""
 
+    let descend = products.sort((el1, el2)=> el2.price.amount - el1.price.amount)
+    for (let el of descend){
+            mnId.innerHTML +=
 
-// live search
-
-inp.addEventListener("input", function(){
-    console.log(inp.value)
-    let filteredArr = products.filter(el => el.titel.toLowerCase().includes(inp.value.toLowerCase()))
-    rander(filteredArr)
-})
-
-
-
-// ეროუ ფანქშენი გამოიყენება
-///  ერთხაზიანი უფნქცია 
-//// ქოლბექი => როდესაც ფუნქციას პარამეტრად გადაეცემა ფუნქცია
-
-
-let print  = x => x+10
-
-
-
-
-print()
+        `<div class="card" style="width: 18rem;">
+        <img src="${el.image}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">${el.titel}}</h5>
+            <p class="card-text">${el.convert(2.85)}</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        </div>
+        `
+}})
