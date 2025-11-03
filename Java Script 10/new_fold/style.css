@@ -1,0 +1,19 @@
+.main{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.button{
+    width: 200px;
+}
+
+
+.green{
+    background-color: green !important;
+}
+
+.red{
+    background-color: red !important;
+}
