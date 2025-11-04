@@ -18,7 +18,6 @@ for (let i = 0; i < 4; i++) {
     let b = Math.round(Math.random() * 255);
     let randomColor = `rgb(${r},${g},${b})`;
     button.style.backgroundColor = randomColor;
-
     buttons.push(button);
 }
 
