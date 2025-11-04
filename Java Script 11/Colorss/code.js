@@ -47,6 +47,7 @@ function setButtons(target, count) {
         }
 
         button.addEventListener('click', function (){
+
             if (button.style.backgroundColor == target){
             message.textContent = "Your answer is Correct";
             message.style.backgroundColor = "green"
@@ -66,33 +67,50 @@ function setButtons(target, count) {
             options.innerHTML = ''; 
             return;
             }
-
+          startRoundTimer();
         })
     }
 }
-
+let timer = null;
 function startRoundTimer() {
+  if (timer) clearInterval(timer);
+
   let duration = 5000;
-  let interval = 10;   
+  let interval = 10;
   let remaining = duration;
 
-  let timer = setInterval(() => {
+  timer = setInterval(() => {
     remaining -= interval;
-    let seconds = (remaining / 1000).toFixed(2)
+    let seconds = (remaining / 1000).toFixed(2);
     time.textContent = `TIME ${seconds}`;
 
     if (remaining <= 0) {
       clearInterval(timer);
-      time.textContent = "TIME 0.00";
-      message.textContent = "⏰ Time's up!";
-      message.style.backgroundColor = "black";
       options.innerHTML = '';
+
+      round++;
+      rounds.textContent = `ROUND ${round}/20`;
+      score.textContent = `SCORE ${round - 1}`;
+
+      if (round >= 21) {
+        message.textContent = "🎉 Game Over!";
+        message.style.backgroundColor = "rgb(94, 179, 9)";
+        return;
+      }
+
+      let newTarget = setTargetColor();
+      let newCount = getButtonCount(round);
+      setButtons(newTarget, newCount);
+      startRoundTimer();
     }
   }, interval);
 }
 
-
+function calculateRound(){
+  round.textContent = `ROUND ${round}`
+}
 let target = setTargetColor();
 let count = getButtonCount(round);
 setButtons(target, count);
 startRoundTimer();
+calculateRound();
