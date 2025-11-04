@@ -7,6 +7,7 @@ let time = document.querySelector(".time")
 let rounds = document.querySelector(".round")
 let score = document.querySelector(".score")
 
+
 function getRandomRGB() {
   const r = Math.round(Math.random() * 255);
   const g = Math.round(Math.random() * 255);
@@ -31,45 +32,49 @@ function getButtonCount(round) {
   }
   return buttonCount;
 }
-
+let points = 0
 function setButtons(target, count) {
-    options.innerHTML = '';
-    let correctIndex = Math.floor(Math.random() * count);
-    for (let i = 0; i < count; i++){
-        let button = document.createElement("button");
-        button.classList.add("btn");
-        options.appendChild(button);
+  options.innerHTML = '';
+  let correctIndex = Math.floor(Math.random() * count);
 
-        if (i === correctIndex) {
-        button.style.backgroundColor = target;
-        } else {
-        button.style.backgroundColor = getRandomRGB();
-        }
+  for (let i = 0; i < count; i++) {
+    let button = document.createElement("button");
+    button.classList.add("btn");
+    options.appendChild(button);
 
-        button.addEventListener('click', function (){
-
-            if (button.style.backgroundColor == target){
-            message.textContent = "Your answer is Correct";
-            message.style.backgroundColor = "green"
-
-            }
-            else {
-            message.textContent = "Your answer is Wrong!";
-            message.style.backgroundColor = "red"
-            }
-            round++;
-            let newTarget = setTargetColor()
-            let newCount = getButtonCount(round)
-            setButtons(newTarget, newCount)
-            if (round >= 21) {
-            message.textContent = "🎉 Game Over!";
-            message.style.backgroundColor = "rgb(94, 179, 9)";
-            options.innerHTML = ''; 
-            return;
-            }
-          startRoundTimer();
-        })
+    if (i === correctIndex) {
+      button.style.backgroundColor = target;
+    } else {
+      button.style.backgroundColor = getRandomRGB();
     }
+    button.addEventListener('click', function () {
+      clearInterval(timer); 
+
+      if (button.style.backgroundColor === target) {
+        message.textContent = "Your answer is Correct";
+        message.style.backgroundColor = "green";
+        points += 1;
+        score.textContent = `SCORE ${points}`;
+      } else {
+        message.textContent = "Your answer is Wrong!";
+        message.style.backgroundColor = "red";
+      }
+
+      round = round + 1;
+      calculateRound();
+
+      if (round >= 21) {
+        document.getElementById("final-score").textContent = points;
+        document.getElementById("popup").classList.remove("hidden");
+        return;
+      }
+
+      let newTarget = setTargetColor();
+      let newCount = getButtonCount(round);
+      setButtons(newTarget, newCount);
+      startRoundTimer();
+    });
+  }
 }
 let timer = null;
 function startRoundTimer() {
@@ -89,7 +94,6 @@ function startRoundTimer() {
       options.innerHTML = '';
 
       round++;
-      rounds.textContent = `ROUND ${round}/20`;
       score.textContent = `SCORE ${round - 1}`;
 
       if (round >= 21) {
@@ -107,10 +111,25 @@ function startRoundTimer() {
 }
 
 function calculateRound(){
-  round.textContent = `ROUND ${round}`
+  rounds.textContent = `ROUND ${round}/20`;
 }
 let target = setTargetColor();
 let count = getButtonCount(round);
 setButtons(target, count);
 startRoundTimer();
 calculateRound();
+
+document.getElementById("play-again").addEventListener("click", function () {
+  round = 1;
+  points = 0;
+  calculateRound();
+  score.textContent = "SCORE 0";
+  message.textContent = "Guess the color!";
+  message.style.backgroundColor = "transparent";
+  document.getElementById("popup").classList.add("hidden");
+
+  let target = setTargetColor();
+  let count = getButtonCount(round);
+  setButtons(target, count);
+  startRoundTimer();
+});
