@@ -70,10 +70,29 @@ function setButtons(target, count) {
         })
     }
 }
-function statistic(){
 
+function startRoundTimer() {
+  let duration = 5000;
+  let interval = 10;   
+  let remaining = duration;
+
+  let timer = setInterval(() => {
+    remaining -= interval;
+    let seconds = (remaining / 1000).toFixed(2)
+    time.textContent = `TIME ${seconds}`;
+
+    if (remaining <= 0) {
+      clearInterval(timer);
+      time.textContent = "TIME 0.00";
+      message.textContent = "⏰ Time's up!";
+      message.style.backgroundColor = "black";
+      options.innerHTML = '';
+    }
+  }, interval);
 }
+
 
 let target = setTargetColor();
 let count = getButtonCount(round);
 setButtons(target, count);
+startRoundTimer();
