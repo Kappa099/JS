@@ -1,10 +1,11 @@
 
 import { car } from "./data.js";
 
-
 let cont = document.querySelector(".cont")
 let sort = document.querySelector(".SortClass")
 let inp = document.querySelector(".inp")
+let select = document.querySelector("#sel")
+let oldarr = [...car]
 
 function render(array){
     for (let el of array){
@@ -48,4 +49,16 @@ inp.addEventListener("input", function () {
     render(filteredArr)
 })
 
+oldarr.forEach(el => {
+    select.innerHTML += `<option value="${el.brand}">${el.brand}</option>`
+})
 
+
+select.addEventListener("change", function(){
+    cont.innerHTML = ""
+    if (select.value == "-1"){
+        render(oldarr)
+    }
+    let filteredSelect = car.filter(el => el.brand == select.value)
+    render(filteredSelect)
+})
