@@ -94,7 +94,7 @@ function startRoundTimer() {
       options.innerHTML = '';
 
       round++;
-      score.textContent = `SCORE ${round - 1}`;
+      score.textContent = `SCORE ${points}`;
 
       if (round >= 21) {
         message.textContent = "🎉 Game Over!";
