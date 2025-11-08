@@ -24,7 +24,6 @@
 
 
 
-let cont = document.querySelector(".cont")
 
        
 // fetch("https://reqres.in/api/users")   
@@ -48,15 +47,17 @@ let cont = document.querySelector(".cont")
 // }
 
 
+let cont = document.querySelector(".cont")
 
 function renderUser(arr){
   for (let el of arr){
    cont.innerHTML +=
     `<div class="card" style="width: 18rem;">
-      <img src="${el.imageUrl1}" class="card-img-top" alt="...">
+      <img src="${el.image}" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">${el.model} - ${el.brand}</h5>
-        <p class="card-text">ტრანსმისია - ${el.transmission}.</p>
+        <h5 class="card-title">${el.title}</h5>
+        <p class="card-text">${el.category}.</p>
+        <p class="card-text"> ${el.rating.rate}.</p>
         <a href="./details.html?id=${el.id}" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>`
@@ -64,8 +65,6 @@ function renderUser(arr){
 }
 
 
-fetch("https://rentcar.stepprojects.ge/api/Car/filter?capacity=4&pageIndex=1&pageSize=10")
+fetch("https://fakestoreapi.com/products/")
 .then(x => x.json())
-.then(x => renderUser(x.data))
-
-console.log(window.location.search)
+.then(x => renderUser(x))
