@@ -48,6 +48,7 @@
 
 
 let cont = document.querySelector(".cont")
+let sort = document.querySelector(".sort")
 
 function renderUser(arr){
   for (let el of arr){
@@ -63,8 +64,10 @@ function renderUser(arr){
     </div>`
   }
 }
-
-
+let oldArr = []
+sort.addEventListener("click", function(){
+  oldArr.sort((a , b)=> a - b)
+})
 fetch("https://fakestoreapi.com/products/")
 .then(x => x.json())
 .then(x => renderUser(x))
