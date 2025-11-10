@@ -52,33 +52,3 @@ select.addEventListener("change", function(){
         renderProduct(oldArr)
     }
 })
-
-const container = document.getElementById("container");
-const page1Btn = document.getElementById("page1");
-const page2Btn = document.getElementById("page2");
-
-// function to fetch and render cars
-function loadPage(pageIndex) {
-  fetch(`https://rentcar.stepprojects.ge/api/Car/paginated?pageIndex=${pageIndex}&pageSize=10`)
-    .then(res => res.json())
-    .then(data => {
-      container.innerHTML = ""; // clear old content
-      data.data.forEach(car => {
-        container.innerHTML += `
-          <div class="card">
-            <img src="${car.imageUrl1}" alt="${car.brand}">
-            <h3>${car.brand} ${car.model}</h3>
-            <p>Year: ${car.year}</p>
-            <p>Price: $${car.price}</p>
-          </div>
-        `;
-      });
-    });
-}
-
-// button clicks
-page1Btn.addEventListener("click", () => loadPage(1));
-page2Btn.addEventListener("click", () => loadPage(2));
-
-// load first page by default
-loadPage(1);
