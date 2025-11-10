@@ -52,3 +52,4 @@ select.addEventListener("change", function(){
         renderProduct(oldArr)
     }
 })
+//
