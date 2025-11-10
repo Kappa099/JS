@@ -30,3 +30,25 @@ function renderProduct(arr){
         `
     });
 }
+
+select.addEventListener("change", function(){
+    if (select.value == "1"){
+        let sortedProduct = oldProduct.sort((a, b) => a.price - b.price)
+        renderProduct(sortedProduct)
+    }
+    else if (select.value == "2"){
+        let sortedProduct = oldProduct.sort((a, b) => b.price - a.price)
+        renderProduct(sortedProduct)
+    }
+    else if (select.value == "3"){
+        let sortedProduct = oldProduct.sort((a, b) => a.rating.rate - b.rating.rate)
+        renderProduct(sortedProduct)
+    }
+    else if (select.value == "4"){
+        let sortedProduct = oldProduct.sort((a, b) => b.rating.rate - a.rating.rate)
+        renderProduct(sortedProduct)
+    }
+    else {
+        renderProduct(oldArr)
+    }
+})
