@@ -7,8 +7,8 @@ let oldProduct = []
 fetch("https://fakestoreapi.com/products")
 .then(response => response.json())
 .then(response => {
-        oldArr = [...arr]
-        oldProduct = [...arr]
+        oldArr = [...response]
+        oldProduct = [...response]
         renderProduct(response)
 })
 
