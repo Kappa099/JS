@@ -144,11 +144,64 @@ function getBook(id) {
 }
 const books = getBooks();
 
-const book = getBook(2)
+// const book = getBook(2)
 
 // const title = book.title
 // const author = book.author
 
-const {title, author, genres} = book;
-const [primaryGenre, secondaryGenre] = genres
-console.log(primaryGenre, secondaryGenre)
+// const {title, author, genres} = book;
+// const [primaryGenre, secondaryGenre] = genres
+// console.log(primaryGenre, secondaryGenre)
+
+books.filter((a, b) => a-b) 
+
+
+let libro = false && "Don't Mind me"
+console.log(libro) 
+
+
+const library = {
+  name: "City Library",
+  address: {
+    street: "Main St",
+    number: 42,
+    city: "Tserovani",
+  },
+  books: [
+    {
+      id: 1,
+      title: "Dune",
+      author: { name: "Frank Herbert" },
+      reviews: {
+        goodreads: { rating: 4.25, count: 1142893 },
+        librarything: null,
+      },
+    },
+    {
+      id: 2,
+      title: "The Cyberiad",
+      author: { name: "Stanislaw Lem" },
+      reviews: {
+        goodreads: { rating: 4.16, count: 11663 },
+        librarything: { rating: 4.13, count: 2434 },
+      },
+    },
+    {
+      id: 3,
+      title: "Unknown Book",
+      author: null, 
+      reviews: {}, 
+    },
+  ],
+  staff: {
+    librarian: { name: "Anna", languages: ["English", "Georgian"] },
+    janitor: null, 
+  },
+};
+let book = library.books[2]
+let boouuk = book.reviews?.goodreads ?? "Empty"
+console.log(boouuk)
+let author = book?.author ?? "nope"
+console.log(author)
+let staff = library.staff?.janitor ?? "nothing"
+console.log(staff)
