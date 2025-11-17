@@ -207,7 +207,14 @@ console.log(author)
 let staff = library.staff?.janitor ?? "nothing"
 console.log(staff)
 */
-const books = getBook()
+const books = getBooks()
+books;
 
-const x = [1,2,3,4,5].map(el => el*2)
-console.log(x)
+const title = books.map((book) => book.title);
+console.log(title);
+
+const titleAutho = books.map((book) => ({
+  author: book.author,
+  title: book.title
+}));
+console.log(titleAutho);
