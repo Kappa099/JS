@@ -218,3 +218,6 @@ const titleAutho = books.map((book) => ({
   title: book.title
 }));
 console.log(titleAutho);
+
+const pagesAll = books.reduce((full, book)=> book.pages + full, 0)
+console.log(pagesAll)
