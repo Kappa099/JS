@@ -142,6 +142,7 @@ function getBooks() {
 function getBook(id) {
   return data.find((d) => d.id === id);
 }
+/*
 const books = getBooks();
 
 // const book = getBook(2)
@@ -205,3 +206,8 @@ let author = book?.author ?? "nope"
 console.log(author)
 let staff = library.staff?.janitor ?? "nothing"
 console.log(staff)
+*/
+const books = getBook()
+
+const x = [1,2,3,4,5].map(el => el*2)
+console.log(x)
