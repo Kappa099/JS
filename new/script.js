@@ -206,7 +206,6 @@ let author = book?.author ?? "nope"
 console.log(author)
 let staff = library.staff?.janitor ?? "nothing"
 console.log(staff)
-*/
 const books = getBooks()
 books;
 
@@ -259,3 +258,8 @@ console.log(deleted)
 
 const updated = deleted.map(book => book.id ===1 ? {...book, pages:1}: book)
 console.log(updated)
+*/
+
+fetch('https://jsonplaceholder.typicode.com/todos/1')
+.then(response => response.json())
+.then(data => console.log(data))
