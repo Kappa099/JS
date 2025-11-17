@@ -221,3 +221,41 @@ console.log(titleAutho);
 
 const pagesAll = books.reduce((full, book)=> book.pages + full, 0)
 console.log(pagesAll)
+
+const newbook ={
+  id: 6,
+  title: "The Martian",
+  publicationDate: "2011-02-11",
+  author: "Andy Weir",
+  genres: ["science fiction", "survival", "space", "humor"],
+  hasMovieAdaptation: true,
+  pages: 369,
+  translations: {
+    spanish: "El marciano",
+    german: "Der Marsianer",
+    japanese: "火星の人"
+  },
+  reviews: {
+    goodreads: {
+      rating: 4.40,
+      ratingsCount: 800000,
+      reviewsCount: 45000
+    },
+    librarything: {
+      rating: 4.35,
+      ratingsCount: 30000,
+      reviewsCount: 1200
+    }
+  }
+}
+function BookAdd(newBook){
+  return [...books, newBook]
+}
+const added = BookAdd(newbook)
+console.log(added)
+
+const deleted = added.filter(book => book.id !== 3)
+console.log(deleted)
+
+const updated = deleted.map(book => book.id ===1 ? {...book, pages:1}: book)
+console.log(updated)
