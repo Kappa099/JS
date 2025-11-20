@@ -265,3 +265,4 @@ fetch('https://jsonplaceholder.typicode.com/todos/1')
 .then(data => console.log(data))
 
 //react
+data ? console.log(data) : console.log("Error")
