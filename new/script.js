@@ -266,3 +266,5 @@ fetch('https://jsonplaceholder.typicode.com/todos/1')
 
 //react
 data ? console.log(data) : console.log("Error")
+const zero = 10
+console.log(zero && "Unknown")
