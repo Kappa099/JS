@@ -52,3 +52,18 @@ console.log(doubled)
 // console.log(arr.filter(el => el % 2 == 0))
 // console.log(arr.sort((a , b)=>a - b))
 
+// Defining a class
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  greet() {
+    console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+  }
+}
+
+const person1 = new Person("Vako", 25);
+person1.greet(); 
+
