@@ -53,6 +53,7 @@ console.log(doubled)
 // console.log(arr.sort((a , b)=>a - b))
 
 // Defining a class
+// 
 class Person {
   constructor(name, age) {
     this.name = name;
